@@ -1,0 +1,16 @@
+version: '2'
+services:
+  mysql:
+    image: docker.io/mysql:5.7
+    env_file: .env
+    container_name: project-db
+  php:
+    build:
+      context: .
+      target: base
+    image: project-latest
+    container_name: project-www
+    ports: 
+      - '80:80'
+    volumes:
+      - ./full:/var/www/html:rw
