@@ -12,5 +12,3 @@ services:
     container_name: project-www
     ports: 
       - '80:80'
-    volumes:
-      - .:/var/www/html:rw
